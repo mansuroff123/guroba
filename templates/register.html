@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %} 
+
+{% block content %}
+
+<!-- Register form section starts  -->
+
+<section class="login">
+
+    <form method="post">
+    {% csrf_token %}
+        <h3>Registration now</h3>
+        
+        {% comment %} <input type="text" name="" placeholder="enter your username" id="" class="box">
+        <input type="email" name="" placeholder="enter your email" id="" class="box">
+        <input type="password" name="" placeholder="enter your password" id="" class="box">
+        <input type="password" name="" placeholder="enter your confirm" id="" class="box"> {% endcomment %}
+
+    
+
+        <div class="d-flex flex-column"> 
+        {{ register_form.username.label }}
+        {{ register_form.username }}
+
+        {{ register_form.email.label }}
+        {{ register_form.email }}
+
+        {{ register_form.password1.label }}
+        {{ register_form.password1 }}
+
+        {{ register_form.password2.label}}
+        {{ register_form.password2 }}
+        </div>
+
+        <div class="remember">
+            <input type="checkbox" name="" id="remember-me">
+            <label for="remember-me"> remember me </label>
+        </div>
+        <!-- <input type="submit" value="login now" class="btn"> -->
+        <button type="submit" class="btn btn-primary py-3" >Registration now</button>
+
+        <p>have an account?</p>
+        <a href="{% url 'main:login' %}" class="btn btn-primary py-3">Login now</a>
+    </form>
+
+</section>
+
+<!-- Register form section ends  -->
+
+{% endblock %}
+
+
+
+
+
+

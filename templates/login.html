@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load crispy_forms_tags %} 
-
+{% load widget_tweaks %}
 
 {% block content %}
 
@@ -16,7 +15,13 @@
         <!-- <input type="email" name="" placeholder="enter your email" id="" class="box">
         <input type="password" name="" placeholder="enter your password" id="" class="box"> -->
 
-        {{ login_form|crispy }}
+        <div class="d-flex flex-column"> 
+
+        {{ login_form.username|add_class:"box" }}
+
+        {{ login_form.password|add_class:"box" }}
+
+        </div>
 
         <div class="remember">
             <input type="checkbox" name="" id="remember-me">
@@ -33,9 +38,10 @@
 
 <!-- login form section ends  -->
 
+
+
+
 {% endblock %}
-
-
 
 
 

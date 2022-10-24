@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
-{% load crispy_forms_tags %} 
+{% load widget_tweaks %}
+
 
 {% block content %}
 
@@ -20,17 +21,13 @@
     
 
         <div class="d-flex flex-column"> 
-        {{ register_form.username.label }}
-        {{ register_form.username }}
+            {{ register_form.username }}
 
-        {{ register_form.email.label }}
-        {{ register_form.email }}
+            {{ register_form.email }}
 
-        {{ register_form.password1.label }}
-        {{ register_form.password1 }}
+            {{ register_form.password1|add_class:"box" }}
 
-        {{ register_form.password2.label}}
-        {{ register_form.password2 }}
+            {{ register_form.password2|add_class:"box" }}
         </div>
 
         <div class="remember">
@@ -46,7 +43,10 @@
 
 </section>
 
+
+
 <!-- Register form section ends  -->
+
 
 {% endblock %}
 

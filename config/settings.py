@@ -37,9 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crispy_forms',
+    'widget_tweaks',
     'main',
-    "crispy_bootstrap5",
 ]
 
 MIDDLEWARE = [
@@ -73,7 +72,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 
-# Database
+# Database{% load widget_tweaks %}
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
